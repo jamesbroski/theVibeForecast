@@ -1,7 +1,20 @@
+body,
+html {
+  height: 100%;
+}
+
+#bg-img {
+  background-image: url("assets/images/back_img.jpg");
+  height: 100%;
+
+  /* Center and scale the image nicely
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+}
+
 * {
   font-family: "Bebas Neue", cursive;
-
-  background-image: url(.assets/images/simon-launay-AiZGatFjSjg-unsplash.jpg);
 }
 .proj-name {
   font-size: 2.25rem;
