@@ -19,13 +19,13 @@
     <link rel="stylesheet" href="./develop/css/style.css" />
     <title>theVibeForecaster</title>
   </head>
-  <body>
+  <body id="backgroundImg">
     <!-- this is our navbar -->
-
     <nav class="navbar bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand proj-name">the vibe forecast</a>
         <h1 id="custom-nav">set the mood for...</h1>
+        
         <form class="d-flex">
           <input
             class="form-control me-2"
@@ -44,7 +44,7 @@
         </form>
       </div>
     </nav>
-    <a
+    <!-- <a
       class="weatherwidget-io"
       href="https://forecast7.com/en/40d71n74d01/new-york/"
       data-label_1="NEW YORK"
@@ -63,7 +63,23 @@
           fjs.parentNode.insertBefore(js, fjs);
         }
       })(document, "script", "weatherwidget-io-js");
-    </script>
+    </script> -->
+
+<!-- This is the weather widget -->
+    <div class="container-fluid px-1 px-md-4 py-5 mx-auto">
+        <div class="row d-flex justify-content-center px-3">
+            <div class="card">
+                <h2 class="ml-auto mr-4 mt-3 mb-0"id="weatherCity">Toronto</h2>
+                <p class="ml-auto mr-4 mb-0 med-font"id="weatherCondition">Snow</p>
+                <h1 class="ml-auto mr-4 large-font"id="weatherTemp">-20&#176;</h1>
+                <p class="time-font mb-0 ml-4 mt-auto"id="weatherTime">08:30 <span class="sm-font">AM</span></p>
+                <p class="ml-4 mb-4" id="weatherDate">Wednesday, 18 October 2019</p>
+            </div>
+        </div>
+    </div>
+
+
+
     <main>
       <div class="container-fluid">
         <h1 id="vibeCity"></h1>
@@ -72,15 +88,21 @@
         <h3 id="hashArray"></h3>
       </div>
     </main>
+
     <iframe
-      width="560"
-      height="315"
+      id = "youtubePlayer"
+      width=50%
+      height=50%
       src="https://www.youtube.com/embed/QVqc6yk8hjc"
       title="YouTube video player"
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen
     ></iframe>
+
+
+
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
       integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
