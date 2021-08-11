@@ -16,7 +16,7 @@ $("#citySearchBtn").on("click", function () {
     //sets the link for youtube api pull based on if the weather is encouraging relaxing or encouraging excitement
     if (localVibe == "Clouds" || localVibe == "Clear" || localVibe == "Snow") {
       var youtubeSRC =
-        "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=summer_day_vibes_mix&key=AIzaSyCdlZo2lbxsoVE0a4K6d8pB2Z66ypZR_40";
+        "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=summer_vibes_music&type=video&videoLicense=creativeCommon&videoEmbeddable=true&videoSyndicated=true&key=AIzaSyCdlZo2lbxsoVE0a4K6d8pB2Z66ypZR_40";
     }
     if (
       localVibe == "Thunderstorm" ||
@@ -24,8 +24,22 @@ $("#citySearchBtn").on("click", function () {
       localVibe == "Rain"
     ) {
       var youtubeSRC =
-        "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=chill_day_vibes_mix&key=AIzaSyCdlZo2lbxsoVE0a4K6d8pB2Z66ypZR_40";
+        "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=rainy_day_music&type=video&videoLicense=creativeCommon&videoEmbeddable=true&videoSyndicated=true&key=AIzaSyCdlZo2lbxsoVE0a4K6d8pB2Z66ypZR_40";
     }
     //return youtubeSRC external ajax call, which will generate api data to randomly pick you a video based on weather parameters
+
+    $.ajax({
+      url: youtubeSRC,
+      method: "GET",
+    }).then(function(data2){
+      console.log(data2);
+      var numberYt= Math.floor(Math.random()*25)
+      console.log(numberYt)
+      var youtubeTag = data2.items[numberYt].id.videoId
+      console.log(youtubeTag);
+      $("#youtubePlayer").attr("src","https://www.youtube.com/embed/"+youtubeTag);
+
+    })
+
   });
 });
