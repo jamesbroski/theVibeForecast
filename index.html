@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./develop/css/style.css" />
+    <title>theVibeForecaster</title>
+  </head>
+  <body>
+    <!-- this is our navbar -->
+    <nav class="navbar bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand proj-name">the vibe forecast</a>
+        <h1 id="custom-nav">set the mood for...</h1>
+        <form class="d-flex">
+          <input
+            class="form-control me-2"
+            id="cityInput"
+            type="search"
+            placeholder="what city?"
+            aria-label="Search"
+          />
+          <button
+            class="btn btn-outline-success"
+            type="submit"
+            id="citySearchBtn"
+          >
+            Search
+          </button>
+        </form>
+      </div>
+    </nav>
+    <a
+      class="weatherwidget-io"
+      href="https://forecast7.com/en/40d71n74d01/new-york/"
+      data-label_1="NEW YORK"
+      data-label_2="WEATHER"
+      data-theme="original"
+      >NEW YORK WEATHER</a
+    >
+    <script>
+      !(function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (!d.getElementById(id)) {
+          js = d.createElement(s);
+          js.id = id;
+          js.src = "https://weatherwidget.io/js/widget.min.js";
+          fjs.parentNode.insertBefore(js, fjs);
+        }
+      })(document, "script", "weatherwidget-io-js");
+    </script>
+    <main>
+      <div class="container-fluid">
+        <h1 id="vibeCity"></h1>
+        <h2 id="cityTemp"></h2>
+        <img src="" />
+        <h3 id="hashArray"></h3>
+      </div>
+    </main>
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/QVqc6yk8hjc"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./develop/js/script.js"></script>
+  </body>
+</html>

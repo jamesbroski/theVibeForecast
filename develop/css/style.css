@@ -1,0 +1,14 @@
+* {
+  font-family: "Bebas Neue", cursive;
+
+  background-image: url(.assets/images/simon-launay-AiZGatFjSjg-unsplash.jpg);
+}
+.proj-name {
+  font-size: 2.25rem;
+  color: dimgray;
+}
+
+#custom-nav {
+  font-size: 1.5rem;
+  padding-left: 66%;
+}
