@@ -5,21 +5,38 @@ var youtubeVideos = [];
 //Titles is the video title
 var youtubeTitles = [];
 
-  if (localStorage.getItem("video") && localStorage.getItem("titles") !== null) {
-    renderButtons();
-  }
+var likedVideos = JSON.parse(localStorage.getItem("combinedStorage")) || [];
+
+  // if (localStorage.getItem("video") && localStorage.getItem("titles") !== null) {
+  //   renderButtons();
+  // }
 
     function renderButtons() {
-    savedVideos = JSON.parse(localStorage.getItem("titles"));
-    savedTitles = JSON.parse(localStorage.getItem("video"))
+      // likedVideos
+      $("#yourHistory").empty();
+      for(var i = 0; i<likedVideos.length;i++) {
+      var newButton = $("<button>").text(likedVideos[i].title)
+      newButton.addClass("youtubeButton")
+      newButton.attr("data-tag",likedVideos[i].tag)
+      $("#yourHistory").append(newButton)
+      }
+
+    
+
     // $("#history").empty();
-    $(savedVideos).each(function (i) {
-      var savedButton = $("<button>").text(savedVideos[i])
-      // .addClass("cityBtn");
-      $("#yourHistory").append(savedButton);
-    })
+  //   $(savedVideos).each(function (i) {
+  //     var savedButton = $("<button>").text(savedVideos[i])
+  //     // .addClass("cityBtn");
+  //     $("#yourHistory").append(savedButton);
+  //   })
   }
 
+  $("#yourHistory").on("click",".youtubeButton", function(){
+    var youtubeCheck = ($(this).data("tag"))
+    $("#youtubePlayer").attr("src","https://www.youtube.com/embed/"+youtubeCheck);
+  })
+
+renderButtons();
 ///getItem from both arrays
 //set text of button to Title
 //.on(click) $(buttonid) => attr(src, youtubeVideos)
@@ -70,23 +87,17 @@ $("#citySearchBtn").on("click", function () {
       var youtubeTag = data2.items[numberYt].id.videoId
       var youtubeTitle =data2.items[numberYt].snippet.title
       console.log(youtubeTag);
+      var youtubeObj = {}
+
+      youtubeObj.tag=youtubeTag
+      youtubeObj.title=youtubeTitle
+
+      likedVideos.push(youtubeObj)
+
+      localStorage.setItem("combinedStorage",JSON.stringify(likedVideos));
+
       $("#youtubePlayer").attr("src","https://www.youtube.com/embed/"+youtubeTag);
-
-      if(youtubeVideos.indexOf(youtubeTag)<0) {
-        youtubeVideos.push(youtubeTag)
-      }
-
-
-      if(youtubeTitles.indexOf(youtubeTitle)<0) {
-        youtubeTitles.push(youtubeTitle)
-      }
-
-      localStorage.setItem("video",JSON.stringify(youtubeVideos))
-      localStorage.setItem("titles",JSON.stringify(youtubeTitles))
-
-
-      localStorage.setItem("video",JSON.stringify(youtubeVideos))
-
+      renderButtons();
       return youtubeTag
     })
 
