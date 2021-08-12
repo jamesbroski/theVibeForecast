@@ -1,4 +1,5 @@
 //city search click event to record the weather parameter in your city of choice
+
 /////Videos is the URL ending
 var youtubeVideos = [];
 //Titles is the video title
@@ -22,6 +23,7 @@ var youtubeTitles = [];
 ///getItem from both arrays
 //set text of button to Title
 //.on(click) $(buttonid) => attr(src, youtubeVideos)
+
 
 
 $("#citySearchBtn").on("click", function () {
@@ -74,12 +76,17 @@ $("#citySearchBtn").on("click", function () {
         youtubeVideos.push(youtubeTag)
       }
 
+
       if(youtubeTitles.indexOf(youtubeTitle)<0) {
         youtubeTitles.push(youtubeTitle)
       }
 
       localStorage.setItem("video",JSON.stringify(youtubeVideos))
       localStorage.setItem("titles",JSON.stringify(youtubeTitles))
+
+
+      localStorage.setItem("video",JSON.stringify(youtubeVideos))
+
       return youtubeTag
     })
 
