@@ -1,5 +1,28 @@
 //city search click event to record the weather parameter in your city of choice
+/////Videos is the URL ending
 var youtubeVideos = [];
+//Titles is the video title
+var youtubeTitles = [];
+
+  if (localStorage.getItem("video") && localStorage.getItem("titles") !== null) {
+    renderButtons();
+  }
+
+    function renderButtons() {
+    savedVideos = JSON.parse(localStorage.getItem("titles"));
+    savedTitles = JSON.parse(localStorage.getItem("video"))
+    // $("#history").empty();
+    $(savedVideos).each(function (i) {
+      var savedButton = $("<button>").text(savedVideos[i])
+      // .addClass("cityBtn");
+      $("#yourHistory").append(savedButton);
+    })
+  }
+
+///getItem from both arrays
+//set text of button to Title
+//.on(click) $(buttonid) => attr(src, youtubeVideos)
+
 
 $("#citySearchBtn").on("click", function () {
   event.preventDefault();
@@ -14,10 +37,10 @@ $("#citySearchBtn").on("click", function () {
   }).then(function (data) {
     console.log(data);
     var localVibe = data.list[0].weather[0].main;
-    //sets the link for youtube api pull based on if the weather is encouraging relaxing or encouraging excitement
+    //sets the link for youtube api pull based on if the weather is encouraging relaxing or encouraging excitement          
     if (localVibe == "Clouds" || localVibe == "Clear" || localVibe == "Snow") {
       var youtubeSRC =
-        "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=summer_vibes_music&type=video&videoLicense=creativeCommon&videoEmbeddable=true&videoSyndicated=true&key=AIzaSyCdlZo2lbxsoVE0a4K6d8pB2Z66ypZR_40";
+        "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=summer_vibes_music&type=video&videoLicense=creativeCommon&videoEmbeddable=true&videoSyndicated=true&key=AIzaSyBB3WDQrRoAkRslg1MadqX2pb6lWaSJcHo";
     }
     if (
       localVibe == "Thunderstorm" ||
@@ -25,7 +48,7 @@ $("#citySearchBtn").on("click", function () {
       localVibe == "Rain"
     ) {
       var youtubeSRC =
-        "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=rainy_day_music&type=video&videoLicense=creativeCommon&videoEmbeddable=true&videoSyndicated=true&key=AIzaSyCdlZo2lbxsoVE0a4K6d8pB2Z66ypZR_40";
+        "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=rainy_day_music&type=video&videoLicense=creativeCommon&videoEmbeddable=true&videoSyndicated=true&key=AIzaSyBB3WDQrRoAkRslg1MadqX2pb6lWaSJcHo";
     }
     //return youtubeSRC external ajax call, which will generate api data to randomly pick you a video based on weather parameters
     $("#weatherCity").text(data.city.name)
@@ -43,6 +66,7 @@ $("#citySearchBtn").on("click", function () {
       var numberYt= Math.floor(Math.random()*25)
       console.log(numberYt)
       var youtubeTag = data2.items[numberYt].id.videoId
+      var youtubeTitle =data2.items[numberYt].snippet.title
       console.log(youtubeTag);
       $("#youtubePlayer").attr("src","https://www.youtube.com/embed/"+youtubeTag);
 
@@ -50,8 +74,12 @@ $("#citySearchBtn").on("click", function () {
         youtubeVideos.push(youtubeTag)
       }
 
+      if(youtubeTitles.indexOf(youtubeTitle)<0) {
+        youtubeTitles.push(youtubeTitle)
+      }
 
       localStorage.setItem("video",JSON.stringify(youtubeVideos))
+      localStorage.setItem("titles",JSON.stringify(youtubeTitles))
       return youtubeTag
     })
 
