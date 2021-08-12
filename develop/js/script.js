@@ -1,4 +1,5 @@
 //city search click event to record the weather parameter in your city of choice
+var youtubeVideos = [];
 
 $("#citySearchBtn").on("click", function () {
   event.preventDefault();
@@ -44,7 +45,13 @@ $("#citySearchBtn").on("click", function () {
       var youtubeTag = data2.items[numberYt].id.videoId
       console.log(youtubeTag);
       $("#youtubePlayer").attr("src","https://www.youtube.com/embed/"+youtubeTag);
-      localStorage.setItem("video",youtubeTag)
+
+      if(youtubeVideos.indexOf(youtubeTag)<0) {
+        youtubeVideos.push(youtubeTag)
+      }
+
+
+      localStorage.setItem("video",JSON.stringify(youtubeVideos))
       return youtubeTag
     })
 
