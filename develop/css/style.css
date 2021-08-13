@@ -3,13 +3,16 @@ html {
   height: 100%;
 }
 
+#grad {
+  /* background-image: linear-gradient(to bottom right, dimgray, #da8700); */
+}
 #backgroundImg {
   /* background-image: url("/assets/images/back_img.jpg"); */
   height: 100%;
   background-color: #343a40;
+
   /* Center and scale the image nicely
-  background-position: center;
-  background-repeat: no-repeat;
+  background-position: center;#da8700,
   background-size: cover; */
 }
 
@@ -23,7 +26,8 @@ html {
 
 #custom-nav {
   font-size: 1.5rem;
-  padding-left: 66%;
+  /* padding-left: 66%;
+  padding-right: 13%; */
 }
 
 /* STYLE FOR WEATHER CARD */
@@ -33,19 +37,21 @@ body {
   height: 100%;
   background-color: #cfd8dc;
   background-repeat: no-repeat;
+  background-image: linear-gradient(#da8700, dimgray);
 }
 
 .card {
   background-image: url("https://images.unsplash.com/photo-1603983732011-caaf6ca67a3e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
   background-size: cover;
-  width: 600px;
-  height: 350px;
+  width: 88%;
+  height: 515px;
   border-radius: 20px;
-  box-shadow: 0px 8px 16px 4px #9e9e9e;
+  box-shadow: 0px 8px 16px 4px #da8700;
   margin-top: 50px;
   margin-bottom: 50px;
   background-repeat: no-repeat;
   background-position: center center;
+  border: none;
 }
 
 .time-font {
@@ -68,7 +74,67 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: linear-gradient(dimgray, #da8700);
+  padding-bottom: 3rem;
 }
 #video {
   width: 100%;
+}
+
+#weatherTemp {
+  text-shadow: -4px 2px #343a40;
+}
+
+#yourHistory {
+  list-style: none;
+}
+#historyContainer {
+  padding-top: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .navbar {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+} */
+
+#navbarEdits {
+  flex-wrap: nowrap;
+}
+
+/* #citySearchBtn {
+  color: #da8700;
+} */
+
+/* .d-flex {
+  padding-left: 50%;
+  padding-right: 20%;
+} */
+
+.nav-link {
+  color: white;
+}
+
+.nav-link:hover {
+  color: #da8700;
+  font-size: 1.5rem;
+}
+
+.youtubeButton {
+  padding: 2px;
+  margin: 5px;
+}
+.youtubeButton:hover {
+  color: #da8700;
+  font-size: 1.1rem;
+}
+
+#youtubePlayer {
+  box-shadow: 0px -3px 16px 4px #da8700;
+  border: none;
+  border-radius: 20px;
 }

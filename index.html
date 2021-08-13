@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,24 +23,26 @@
     <nav class="navbar bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand proj-name">the vibe forecast</a>
-        <h1 id="custom-nav">set the mood for...</h1>
-        
-        <form class="d-flex">
-          <input
-            class="form-control me-2"
-            id="cityInput"
-            type="search"
-            placeholder="what city?"
-            aria-label="Search"
-          />
-          <button
-            class="btn btn-outline-success"
-            type="submit"
-            id="citySearchBtn"
-          >
-            Search
-          </button>
-        </form>
+        <div class="col-3"
+          <h1 id="custom-nav">set the mood for...</h1>
+
+          <form class="d-flex">
+            <input
+              class="form-control me-2"
+              id="cityInput"
+              type="search"
+              placeholder="what city?"
+              aria-label="Search"
+            />
+            <button
+              class="btn btn-outline-warning"
+              type="submit"
+              id="citySearchBtn"
+            >
+              Search
+            </button>
+          </form>
+        </div>
       </div>
     </nav>
     <!-- <a
@@ -65,29 +66,56 @@
       })(document, "script", "weatherwidget-io-js");
     </script> -->
 
-<!-- This is the weather widget -->
+    <!-- This is the weather widget -->
     <div class="container-fluid px-1 px-md-4 py-5 mx-auto">
-        <div class="row d-flex justify-content-center px-3">
-            <div class="card">
-                <h2 class="ml-auto mr-4 mt-3 mb-0"id="weatherCity"></h2>
-                <p class="ml-auto mr-4 mb-0 med-font"id="weatherCondition"></p>
-                <h1 class="ml-auto mr-4 large-font"id="weatherTemp"></h1>
-                <p class="med-font mb-0 ml-4 mt-auto"id="weatherFeels"><span class="sm-font"></span></p>
-            </div>
+      <div class="row d-flex justify-content-center px-3">
+        <div class="card">
+          <h2 class="ml-auto mr-4 mt-3 mb-0" id="weatherCity"></h2>
+          <p class="ml-auto mr-4 mb-0 med-font" id="weatherCondition"></p>
+          <h1 class="ml-auto mr-4 large-font" id="weatherTemp"></h1>
+          <p class="med-font mb-0 ml-4 mt-auto" id="weatherFeels">
+            <span class="sm-font"></span>
+          </p>
         </div>
+      </div>
     </div>
 
+    <main></main>
 
+    <div id="youtubeEdit">
+      <iframe
+        id="youtubePlayer"
+        src="https://www.youtube.com/embed/QVqc6yk8hjc"
+        width="86%"
+        height="600"
+      ></iframe>
+    </div>
 
-    <main>
-    </main>
+      <br>
 
-  <div id="youtubeEdit">
-    <iframe id="youtubePlayer" src="https://www.youtube.com/embed/QVqc6yk8hjc" width="86%" height="600"></iframe>
-  </div>
+    <div class="container" id="historyContainer">
+      <h1>Your Recent Vibes</h1>
+    <li id="yourHistory"></li>
+    </div>
 
-  <li id="yourHistory"></li>
+      <br>
 
+    <footer>
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link" target= "no_blank" href="https://github.com/AdamKuemmel">ADAM KUEMMEL</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" target= "no_blank" href="https://github.com/jamesbroski">JAMES BROSKI</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" target= "no_blank" href="https://github.com/patrickbrown-io">PATRICK BROWN</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" target= "no_blank" href="https://github.com/mbunsness">MATTHEW BUNSNESS</a>
+        </li>
+      </ul>
+    </footer>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
       integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
@@ -97,4 +125,3 @@
     <script src="./develop/js/script.js"></script>
   </body>
 </html>
-
