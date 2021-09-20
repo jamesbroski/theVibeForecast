@@ -50,7 +50,8 @@ So that I can replay songs that I liked.
 
 -will include links to each one of our github accounts
 
-# screenshot of wireframe
+# Below is a screen shot of what the user can expect:
 
-![screenshot of wireframe](./assets/images/wireframe.png)
+![Screen Shot 2021-09-19 at 9 09 35 PM (2)](https://user-images.githubusercontent.com/87332492/133953653-c2ba8915-f8fe-4752-a16d-afb9fd2fbbc1.png)
+
 
