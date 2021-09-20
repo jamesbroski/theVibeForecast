@@ -1,3 +1,5 @@
+![license badge](https://img.shields.io/badge/License-MIT-lightgrey.svg)
+
 Link to deployed application: https://jamesbroski.github.io/theVibeForecast/
 
 # theVibeForecast
